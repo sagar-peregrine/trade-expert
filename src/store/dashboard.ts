@@ -41,7 +41,7 @@ export const useDashboardStore = create<DashboardStore>()(
   persist(
     (set) => ({
       config: {
-        ngrokUrl: "http://localhost:8000",
+        ngrokUrl: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000",
         selectedSymbols: ["BTCUSDT", "ETHUSDT", "SOLUSDT"],
         selectedTimeframes: ["1m", "15m", "1h"],
       },
